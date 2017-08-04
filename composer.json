@@ -1,0 +1,19 @@
+{
+    "name": "gitmisi/breadcrumb",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Misi",
+            "email": "misihajdu@gmail.com"
+        }
+    ],
+    "license": [
+        "MIT"
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "GitMisi\\BreadCrumbs\\": "src/"
+        }
+    }
+}
