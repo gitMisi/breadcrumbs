@@ -8,6 +8,12 @@ class BreadCrumbs implements ToHtml
     private $node;
     private $separator;
 
+    public function __construct()
+    {
+        $this->node = [];
+        $this->separator = '';
+    }
+
     public function add(Crumb $node) {
         $this->node[] = $node;
         return $this;
