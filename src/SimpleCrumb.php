@@ -16,4 +16,11 @@ class SimpleCrumb implements Crumb {
     public function html() {
         return $this->caption();
     }
+
+	public function json()
+	{
+		return json_encode([
+			'caption' => $this->caption()
+		]);
+	}
 }

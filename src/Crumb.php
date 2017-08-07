@@ -2,6 +2,6 @@
 
 namespace GitMisi\BreadCrumbs;
 
-interface Crumb extends ToHtml {
+interface Crumb extends Printable {
     public function caption();
 }

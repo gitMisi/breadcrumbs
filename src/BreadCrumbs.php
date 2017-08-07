@@ -2,7 +2,7 @@
 
 namespace GitMisi\BreadCrumbs;
 
-class BreadCrumbs implements ToHtml
+class BreadCrumbs implements Printable
 {
     /** @var Crumb[] */
     private $node;
@@ -14,6 +14,9 @@ class BreadCrumbs implements ToHtml
         $this->separator = '';
     }
 
+	/**
+	 * @return $this
+	 */
     public function add(Crumb $node) {
         $this->node[] = $node;
         return $this;
@@ -31,4 +34,13 @@ class BreadCrumbs implements ToHtml
         }
         return rtrim($html, $this->separator);
     }
+
+	public function json()
+	{
+		$buffer = [];
+		foreach ($this->node as $node) {
+			$buffer[] = json_decode($node->json(), true);
+		}
+		return json_encode(array_merge(['separator' => $this->separator], $buffer));
+	}
 }

@@ -22,4 +22,12 @@ class LinkedCrumb implements Crumb, Link {
     public function html() {
         return sprintf('<a href="%s">%s</a>', $this->url(), $this->caption());
     }
+
+	public function json()
+	{
+		return json_encode([
+			'url' => $this->url(),
+			'caption' => $this->caption()
+		]);
+	}
 }
